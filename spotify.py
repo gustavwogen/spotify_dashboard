@@ -1,11 +1,19 @@
 import pandas as pd
 import spotipy
+from spotipy.oauth2 import SpotifyOAuth
+
+
+def create_client():
+    scope = "user-top-read"
+    client = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
+    return client
 
 
 def create_tracks_df(client: spotipy.client.Spotify, limit=50, offset=0, time_range='medium_term'):
     results = client.current_user_top_tracks(limit, offset, time_range)
+    print(results)
     table = []
-    for item in results['items'][:5]:
+    for item in results['items']:
         row = {}
         album_title = item['album']['name']
         large_img, medium_img, small_img = item['album']['images']
