@@ -161,3 +161,6 @@ cython_debug/
 
 .streamlit/
 .idea/
+*.ipynb
+testing.ipynb
+ramp.ipynb
