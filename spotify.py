@@ -59,8 +59,3 @@ def create_top_artists_df(
         table.append(row)
     df = pd.DataFrame.from_records(table)
     return df
-
-
-def create_top_albums_df(
-    client: spotipy.client.Spotify, limit=50, offset=0, time_range="medium_term"
-):
