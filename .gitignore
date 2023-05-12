@@ -164,3 +164,4 @@ cython_debug/
 *.ipynb
 testing.ipynb
 ramp.ipynb
+.vscode/
