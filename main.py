@@ -1,13 +1,17 @@
 import os
-import spotipy
+import logging
 from spotipy.oauth2 import SpotifyOAuth
 import streamlit as st
 
 from spotify import create_client, create_top_tracks_df, create_top_artists_df
 
+logger = logging.getLogger(__name__)
+logger.setLevel(10)
+
 
 def main():
     st.title("Spotify Dashboard")
+    logger.info("hello this is from the logger")
     col1, col2 = st.columns(2)
     button_clicked = "songs"
     with col1:
